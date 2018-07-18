@@ -1,0 +1,124 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Adiccionar Activo Fijo</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <h3>Complete el formulario</h3>
+  <hr />
+  <form [formGroup]="myForm" (ngSubmit)="saveData()">
+    <ion-list>
+      <ion-item>
+        <ion-icon name="logo-buffer" item-start></ion-icon>
+        <ion-label stacked>Nombre:</ion-label>
+        <ion-input formControlName="nombre" type="text" placeholder="Nombre"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-icon name="chatbubbles" item-start></ion-icon>
+        <ion-label stacked>Descripcion:</ion-label>
+        <ion-input formControlName="descripcion" type="text" placeholder="descripcion"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-icon name="clipboard" item-start></ion-icon>
+        <ion-label stacked>Tipo:</ion-label>
+        <ion-select formControlName="tipo">
+          <ion-option value="material de oficina">Material de Oficina</ion-option>
+          <ion-option value="bienes inmuebles">Bienes Inmuebles</ion-option>
+          <ion-option value="maquinaria">Maquinaria</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+          <ion-icon name="cube" item-start></ion-icon>
+          <ion-label stacked>Serial:</ion-label>
+          <ion-input formControlName="serial" type="text" placeholder="Serial"></ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-icon name="clipboard" item-start></ion-icon>
+          <ion-label stacked>Numero Inventario:</ion-label>
+          <ion-input formControlName="numero_inventario" type="text" placeholder="Numero Inventario"></ion-input>
+      </ion-item>
+      <ion-row>
+          <ion-col>
+            <ion-item>
+              <ion-icon name="crop" item-start></ion-icon>
+              <ion-label>Peso:</ion-label>
+              <ion-input formControlName="peso" type="number" placeholder="Peso"></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col>
+            <ion-item>
+              <ion-icon name="crop" item-start></ion-icon>
+              <ion-label>Alto:</ion-label>
+              <ion-input formControlName="alto" type="number" placeholder="Alto"></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+              <ion-item>
+                <ion-icon name="crop" item-start></ion-icon>
+                <ion-label>Ancho:</ion-label>
+                <ion-input formControlName="ancho" type="number" placeholder="Ancho"></ion-input>
+              </ion-item>
+            </ion-col>
+            <ion-col>
+              <ion-item>
+                <ion-icon name="crop" item-start></ion-icon>
+                <ion-label>Largo:</ion-label>
+                <ion-input formControlName="largo" type="number" placeholder="Largo"></ion-input>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+          <ion-item>
+              <ion-icon name="cash" item-start></ion-icon>
+              <ion-label stacked>Valor Compra:</ion-label>
+              <ion-input formControlName="valor_compra" type="number" placeholder="Valor compra"></ion-input>
+          </ion-item>
+          <ion-item>
+              <ion-icon name="calendar" item-start></ion-icon>
+              <ion-label stacked>Fecha de Compra:</ion-label>
+              <ion-datetime  formControlName="fecha_compra" displayFormat="MM-DD-YYYY" placeholder="MM-DD-YYY"></ion-datetime >
+          </ion-item>
+          <ion-item>
+              <ion-icon name="calendar" item-start></ion-icon>
+              <ion-label stacked>Fecha de Baja:</ion-label>
+              <ion-datetime  formControlName="feha_baja" displayFormat="MM-DD-YYYY" placeholder="MM-DD-YYY"></ion-datetime >
+          </ion-item>
+          <ion-item>
+              <ion-icon name="done-all" item-start></ion-icon>
+              <ion-label stacked>Estado:</ion-label>
+              <ion-input formControlName="estado" type="text" placeholder="Estado"></ion-input>
+          </ion-item>
+          <ion-item>
+              <ion-icon name="color-palette" item-start></ion-icon>
+              <ion-label stacked>Color:</ion-label>
+              <ion-input formControlName="color" type="text" placeholder="Color"></ion-input>
+          </ion-item>
+          <ion-item>
+              <ion-icon name="contract" item-start></ion-icon>
+              <ion-label stacked>Tipo Asignacion:</ion-label>
+              <ion-select formControlName="tipo_asignacion">
+                <ion-option value="Area">Area</ion-option>
+                <ion-option value="Personal">Personal</ion-option>
+              </ion-select>
+          </ion-item>
+          <ion-item>
+              <ion-icon name="create" item-start></ion-icon>
+              <ion-label stacked>Detalle:</ion-label>
+              <ion-input formControlName="detalle" type="text" placeholder="Detalle"></ion-input>
+          </ion-item>
+          <ion-item>
+              <ion-icon name="locate" item-start></ion-icon>
+              <ion-label stacked>Ciudad:</ion-label>
+              <ion-input formControlName="ciudad" type="text" placeholder="Ciudad"></ion-input>
+          </ion-item>
+    </ion-list>
+    <div padding>
+      <button ion-button type="submit" [disabled]="!myForm.valid">Guardar</button>
+    </div>
+  </form>
+</ion-content>

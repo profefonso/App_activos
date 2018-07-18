@@ -3,21 +3,20 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>List</ion-title>
+    <ion-title>Listado de Activos</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
+  <h3>Seleccione para ver detalle de cada Activo</h3>
+  <hr />
   <ion-list>
-    <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
-      <ion-icon [name]="item.icon" item-start></ion-icon>
-      {{item.title}}
-      <div class="item-note" item-end>
-        {{item.note}}
+    <ion-item *ngFor="let activo of activos" >
+      <div (click)="clik_detalle(activo.id)">
+          <h2>{{ activo.nombre | uppercase }}</h2>
+          <p>{{ activo.descripcion }}</p>
+          <p>{{ activo.serial }}</p>
       </div>
-    </button>
+    </ion-item>
   </ion-list>
-  <div *ngIf="selectedItem" padding>
-    You navigated here from <b>{{selectedItem.title}}</b>
-  </div>
 </ion-content>
