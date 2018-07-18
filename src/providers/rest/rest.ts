@@ -10,7 +10,7 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class RestProvider {
 
-  apiUrl = 'http://127.0.0.1:9000/api';
+  apiUrl = 'http://181.49.210.130:3003/api';
 
   
 
@@ -29,7 +29,7 @@ export class RestProvider {
   }
 
   getActivoById(id_activo) {
-    return this.http.get('http://127.0.0.1:9000/api/activos/'+id_activo);
+    return this.http.get('http://181.49.210.130:3003/api/activos/'+id_activo);
   }
 
   addActivo(data) {
